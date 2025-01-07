@@ -1,23 +1,12 @@
 import "./App.css";
-import { Button } from "./components/button/button.tsx";
-import { TodosService } from "./services/api/TodosService.ts";
+import AllTodos from "./layouts/allTodos/allTodos.tsx";
+import Header from "./layouts/header/header.tsx";
 
 function App() {
 	return (
 		<>
-			<div> todo list from Timofey </div>
-			<Button
-				onClick={() => {
-					TodosService.getAllTodo();
-				}}
-				title="get"
-			/>
-			<Button
-				onClick={() => {
-					TodosService.createTodo();
-				}}
-				title="post"
-			/>
+			<Header />
+			<AllTodos />
 		</>
 	);
 }

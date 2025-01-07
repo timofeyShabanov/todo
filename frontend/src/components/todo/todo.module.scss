@@ -1,0 +1,31 @@
+.todo {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__point {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__content {
+    color: #BF748A;
+    font-size: 16px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: calc(24px + 3px);
+    right: 0;
+    height: 2px;
+    background-color: #EBB2C4;
+  }
+}
