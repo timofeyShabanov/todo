@@ -1,5 +1,6 @@
 export interface TTodo {
 	_id?: string;
-	content: string;
-	done: boolean;
+	title?: string;
+	content?: string;
+	done?: boolean;
 }

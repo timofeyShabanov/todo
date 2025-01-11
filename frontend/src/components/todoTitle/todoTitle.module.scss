@@ -1,0 +1,20 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+
+  &__content {
+    border: 5px solid #EBB2C4;
+    border-right: none;
+    width: 30px;
+    height: 60px;
+    transition: all 0.3s;
+    border-radius: 10px;
+  }
+
+  &__content--active {
+    margin-left: 15px;
+    width: 15px;
+  }
+}

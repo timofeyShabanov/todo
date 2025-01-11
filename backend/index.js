@@ -3,7 +3,7 @@ import router from "./router.js";
 import cors from "cors";
 import mongoose from "mongoose";
 
-const PORT = 5001;
+const PORT = 5002;
 const uri =
   "mongodb+srv://qmdqo:qmdqo@cluster0.4rjfv.mongodb.net/todo-app?retryWrites=true&w=majority&appName=Cluster0";
 

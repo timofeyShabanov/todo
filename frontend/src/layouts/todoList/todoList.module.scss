@@ -1,0 +1,23 @@
+.todo {
+  display: flex;
+
+  &__list {
+    width: 70%;
+    border: 7px solid #EBB2C4;
+
+    &__todos {
+      border: 5px solid #ef0049;
+      border-radius: 7px;
+      height: 300px;
+    }
+
+    &__footer {
+
+
+      &__button {
+        cursor: pointer;
+      }
+    }
+  }
+}
+

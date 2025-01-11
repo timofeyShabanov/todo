@@ -1,22 +1,22 @@
 import axios from "axios";
 import { TTodo } from "../types/types.ts";
 
-const api = "http://localhost:5001/";
+const api = "http://localhost:5002/";
 
 export const TodosService = {
-	async createTodo({ content, done }: TTodo) {
+	async createTodo({ title, content }: TTodo) {
 		return axios
 			.post(`${api}todo`, {
+				title: title,
 				content: content,
-				done: done,
+				done: false,
 			})
 			.then(response => {
-				console.log(response);
-				return response.data; // Если нужно вернуть результат
+				return response.data;
 			})
 			.catch(error => {
 				console.error(error);
-				throw error; // Если нужно обработать ошибки
+				throw error;
 			});
 	},
 
@@ -24,6 +24,18 @@ export const TodosService = {
 		return axios
 			.get(`${api}todo`)
 			.then(response => response.data)
+			.catch(error => {
+				console.error(error);
+				throw error;
+			});
+	},
+
+	async PutTodoDone({ _id, done }: TTodo) {
+		return axios
+			.put(`${api}todo`, {
+				id: _id,
+				done: done,
+			})
 			.catch(error => {
 				console.error(error);
 				throw error;
