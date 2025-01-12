@@ -41,4 +41,15 @@ export const TodosService = {
 				throw error;
 			});
 	},
+
+	async DeleteTodo({ _id }: TTodo) {
+		return axios
+			.delete(`${api}todo`, {
+				data: { id: _id },
+			})
+			.catch(error => {
+				console.error(error);
+				throw error;
+			});
+	},
 };

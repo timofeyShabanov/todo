@@ -15,8 +15,16 @@
   }
 
   &__content {
+    display: flex;
+    align-items: center;
     color: #BF748A;
     font-size: 16px;
+    width: 100%;
+
+    &__delete {
+      margin-left: auto;
+      cursor: pointer;
+    }
   }
 
   &::after {

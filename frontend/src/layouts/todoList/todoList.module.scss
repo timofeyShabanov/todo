@@ -4,20 +4,15 @@
   &__list {
     width: 70%;
     border: 7px solid #EBB2C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
     &__todos {
-      border: 5px solid #ef0049;
       border-radius: 7px;
       height: 300px;
-    }
-
-    &__footer {
-
-
-      &__button {
-        cursor: pointer;
-      }
+      overflow-y: auto;
     }
   }
 }
-

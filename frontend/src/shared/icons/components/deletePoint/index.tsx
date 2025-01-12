@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const DEFAULT_COLOR = "#EBB2C4";
-const DEFAULT_WIDTH = 36;
-const DEFAULT_HEIGHT = 36;
+const DEFAULT_WIDTH = 20;
+const DEFAULT_HEIGHT = 20;
 
 interface IIcon {
 	width?: number;
@@ -11,7 +11,7 @@ interface IIcon {
 	hover?: boolean;
 }
 
-export function AddButton({
+export function DeletePoint({
 	width = DEFAULT_WIDTH,
 	height = DEFAULT_HEIGHT,
 	color = DEFAULT_COLOR,
@@ -21,6 +21,7 @@ export function AddButton({
 	if (isHovered) {
 		hover_color = "#F4CCD8";
 	}
+
 	return (
 		<svg
 			onMouseEnter={() => setIsHovered(true)}
@@ -31,10 +32,8 @@ export function AddButton({
 			viewBox="0 0 36 36"
 			fill={hover_color}
 			stroke={color}
-			stroke-width="3">
-			<circle cx="18" cy="18" r="16" />
-			<line x1="18" y1="10" x2="18" y2="26" stroke={color} stroke-width="5" />
-			<line x1="10" y1="18" x2="26" y2="18" stroke={color} stroke-width="5" />
+			strokeWidth="2">
+			<line x1="10" y1="18" x2="26" y2="18" stroke={color} strokeWidth="5" />
 		</svg>
 	);
 }

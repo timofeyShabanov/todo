@@ -13,9 +13,7 @@ const TodoTitle = () => {
 						className={`${cl["title__content"]} ${
 							activeIndex === index ? cl["title__content--active"] : ""
 						}`}
-						onClick={() => setActiveIndex(index)}
-						onMouseEnter={() => console.log(`enter ${title}`)}
-						onMouseLeave={() => console.log(`leave ${title}`)}>
+						onClick={() => setActiveIndex(index)}>
 						{title}
 					</div>
 				</div>

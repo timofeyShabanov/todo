@@ -11,18 +11,23 @@ interface IIcon {
 	hover?: boolean;
 }
 
-export function AddButton({
+export function RemoveButton({
 	width = DEFAULT_WIDTH,
 	height = DEFAULT_HEIGHT,
 	color = DEFAULT_COLOR,
 }: IIcon) {
 	const [isHovered, setIsHovered] = useState(false);
+	const [isCross, setIsCross] = useState(false);
 	let hover_color = "none";
 	if (isHovered) {
 		hover_color = "#F4CCD8";
 	}
+
 	return (
 		<svg
+			onClick={() => {
+				setIsCross(!isCross);
+			}}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			xmlns="http://www.w3.org/2000/svg"
@@ -31,10 +36,30 @@ export function AddButton({
 			viewBox="0 0 36 36"
 			fill={hover_color}
 			stroke={color}
-			stroke-width="3">
+			strokeWidth="3">
 			<circle cx="18" cy="18" r="16" />
-			<line x1="18" y1="10" x2="18" y2="26" stroke={color} stroke-width="5" />
-			<line x1="10" y1="18" x2="26" y2="18" stroke={color} stroke-width="5" />
+			{isCross ? (
+				<>
+					<line
+						x1="10"
+						y1="10"
+						x2="26"
+						y2="26"
+						stroke={color}
+						strokeWidth="5"
+					/>
+					<line
+						x1="10"
+						y1="26"
+						x2="26"
+						y2="10"
+						stroke={color}
+						strokeWidth="5"
+					/>
+				</>
+			) : (
+				<line x1="10" y1="18" x2="26" y2="18" stroke={color} strokeWidth="5" />
+			)}
 		</svg>
 	);
 }

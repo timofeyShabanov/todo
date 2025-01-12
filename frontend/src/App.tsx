@@ -1,12 +1,10 @@
 import "./App.css";
-import Header from "./layouts/header/header.tsx";
-import TodoList from "./layouts/todoList/todoList.tsx";
+import Main from "./pages/main/main.tsx";
 
 function App() {
 	return (
 		<>
-			<Header />
-			<TodoList />
+			<Main />
 		</>
 	);
 }

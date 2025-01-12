@@ -41,4 +41,20 @@ router.put("/todo", async (req, res) => {
   }
 });
 
+router.delete("/todo", async (req, res) => {
+  try {
+    if (!req.body.id) {
+      return res
+        .status(400)
+        .json({ message: "ID and done fields are required" });
+    }
+    const deleteTodo = await Todo.findByIdAndDelete(req.body.id);
+    if (!deleteTodo) {
+      return res.status(404).json({ message: "Todo not found" });
+    }
+    return res.status(200).json(deleteTodo);
+  } catch (e) {
+    return res.status(500).json(e.message);
+  }
+});
 export default router;

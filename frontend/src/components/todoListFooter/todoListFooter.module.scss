@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__text {
+    text-align: center;
+    flex-grow: 1;
+  }
+}
